@@ -1,0 +1,29 @@
+rooms={
+    "A":"dirty",
+    "B":"dirty"
+}
+location ="A"
+print("Initial room status :",rooms)
+while True :
+    if rooms[location]=="dirty":
+        print("location:",location)
+        print("percept:",location,"is dirty")
+        print("action : SUCK")
+        rooms[location]="clean"
+
+    else:
+        if location == "A":
+            print("location",location)
+            print("percept",location,"is clean")
+            print("action : move to right ")
+            location = "B"
+        else:
+            print("location",location)
+            print("percept:",location,"is clean ")
+            print("action:move to left")
+            location = "A"
+    print("current room status :",rooms)
+    if rooms["A"]=="clean" and rooms["B"]=="clean":
+        print("goal achieved")
+        print("both rooms are clean ")
+        break
